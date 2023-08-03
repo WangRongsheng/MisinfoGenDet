@@ -1,0 +1,452 @@
+human_ori,gpt_ori,human_decompose,gpt_decompose,sim,human_judge_ori,gpt_judge_ori,human_judge_decompose,gpt_judge_decompose
+The song recorded by Fergie that was produced by Polow da Don and was followed by Life Goes On was M.I.L.F.$.,The song recorded by Britney Spears that was produced by Max Martin and was followed by Toxic was Oops!... I Did It Again.,"program: 
+    def program():
+        fact_1 = Verify(""The song recorded by Fergie that was produced by Polow da Don is M.I.L.F.$."")
+        fact_2 = Verify(""M.I.L.F.$ was followed by Life Goes On."")
+        label = Predict(fact_1 and fact_2)","program:
+    def program():
+        fact_1 = Verify(""Oops!... I Did It Again was recorded by Britney Spears."")
+        fact_2 = Verify(""Oops!... I Did It Again was produced by Max Martin."")
+        fact_3 = Verify(""Oops!... I Did It Again was followed by Toxic."")
+        label = Predict(fact_1 and fact_2 and fact_3)",0.7708333333333334,Humans,Humans,ChatGPT,ChatGPT
+"Stephen King wrote the novel that the movie directed by Stanley Kubrick that was sampled in the album ""Where Blood and Fire Bring Rest"" was based on.","H.G. Wells wrote the novel that the movie directed by Alfred Hitchcock that was sampled in the album ""Where Blood and Fire Bring Rest"" was based on.","program: 
+    def program():
+        answer_1 = Question(""Who wrote the novel that the movie directed by Stanley Kubrick that was sampled in the album 'Where Blood and Fire Bring Rest' was based on?"")
+        fact_1 = Verify(f""Stephen King wrote the novel that the movie was based on."")
+        label = Predict(fact_1)","program: 
+    def program():
+        answer_1 = Question(""Which novel did H.G. Wells write?"")
+        answer_2 = Question(""Which movie directed by Alfred Hitchcock was sampled in the album 'Where Blood and Fire Bring Rest'?"")
+        fact_1 = Verify(f""The movie [answer_2] was based on the novel [answer_1] written by H.G. Wells."")
+        label = Predict(fact_1)",0.82,Humans,Humans,Humans.,Humans.
+Greater Swiss Mountain Dog and Harrier are both dog breeds.,Pomeranian and Dalmatian are both dog breeds.,"program: 
+    def program():
+        fact_1 = Verify(""Greater Swiss Mountain Dog is a dog breed."")
+        fact_2 = Verify(""Harrier is a dog breed."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Pomeranian is a dog breed."")
+        fact_2 = Verify(""Dalmatian is a dog breed."")
+        label = Predict(fact_1 and fact_2)",0.8378378378378378,Humans,Humans,Humans.,Humans.
+No One's Gonna Love You appeared in the Ruben Fleischer film Zombieland.,《No One's Gonna Love You》出现在导演鲁本·弗莱彻的电影《僵尸乐园》中。,"program: 
+    def program():
+        fact_1 = Verify(""No One's Gonna Love You appeared in the Ruben Fleischer film Zombieland."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""《No One's Gonna Love You》 appeared in the movie directed by 鲁本·弗莱彻 named 《僵尸乐园》."")
+        label = Predict(fact_1)",0.7169811320754716,Humans,Humans,Humans.,Humans.
+"Before I Go to Sleep stars an Australian actress, producer and occasional singer.","Before I Go to Sleep stars a Maltese actor, director and occasional dancer.","program: 
+    def program():
+        fact_1 = Verify(""Before I Go to Sleep stars an Australian actress."")
+        fact_2 = Verify(""Before I Go to Sleep stars a producer."")
+        fact_3 = Verify(""Before I Go to Sleep stars an occasional singer."")
+        label = Predict(fact_1 and fact_2 and fact_3)","program: 
+    def program():
+        fact_1 = Verify(""Before I Go to Sleep stars a Maltese actor."")
+        fact_2 = Verify(""Before I Go to Sleep stars a Maltese director."")
+        fact_3 = Verify(""Before I Go to Sleep stars a Maltese occasional dancer."")
+        label = Predict(fact_1 and fact_2 and fact_3)",0.9210526315789473,Humans,Humans,ChatGPT,ChatGPT
+Marko Dmitrović  is a player in the La Liga league.,Marko Dmitrović is a player in the Major League Baseball league.,"program: 
+    def program():
+        fact_1 = Verify(""Marko Dmitrović is a player in the La Liga league."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""Marko Dmitrović is a player in the Major League Baseball league."")
+        label = Predict(fact_1)",0.9487179487179487,Humans,Humans,ChatGPT,Humans.
+Eatza Pizza and Your Pie were not founded in the same state .,Dominos Pizza and Papa John's were not founded in the same state.,"program: 
+    def program():
+        answer_1 = Question(""Which state was Eatza Pizza founded in?"")
+        answer_2 = Question(""Which state was Your Pie founded in?"")
+        fact_1 = Verify(f""[answer_1] and [answer_2] are not the same state."")
+        label = Predict(fact_1)","program: 
+    def program():
+        answer_1 = Question(""Which state was Dominos Pizza founded in?"")
+        answer_2 = Question(""Which state was Papa John's founded in?"")
+        fact_1 = Verify(f""[answer_1] and [answer_2] are not the same state."")
+        label = Predict(fact_1)",0.8863636363636364,Humans,Humans,ChatGPT,Humans.
+Carnegie Hall Tower is located in the same city as Staten Island.,Carnegie Hall Tower is located in the same city as Mount Everest.,"program: 
+    def program():
+        fact_1 = Verify(""Carnegie Hall Tower is located in the same city as Staten Island."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""Carnegie Hall Tower is located in the same city as Mount Everest."")
+        label = Predict(fact_1)",0.85,Humans,Humans,Humans.,ChatGPT
+"The star of the Irish film directed by Paddy Breathnach played Marcus Agrippa in the HBO drama series ""Rome"".","The star of the Irish film directed by Paddy Breathnach played Julius Caesar in the HBO drama series ""Rome"".","program: 
+    def program():
+        answer_1 = Question(""Who is the star of the Irish film directed by Paddy Breathnach?"")
+        fact_1 = Verify(f""[answer_1] played Marcus Agrippa in the HBO drama series 'Rome'."")
+        label = Predict(fact_1)","program: 
+    def program():
+        answer_1 = Question(""Who is the star of the Irish film directed by Paddy Breathnach?"")
+        fact_1 = Verify(f""[answer_1] played Julius Caesar in the HBO drama series 'Rome'."")
+        label = Predict(fact_1)",0.9148936170212766,Humans,Humans,Humans.,Humans.
+"Gregg Rolie and Rob Tyner, are not a keyboardist.","Gregg Rolie and Rob Tyner, are not renowned keyboardists.","program: 
+    def program():
+        fact_1 = Verify(""Gregg Rolie is not a keyboardist."")
+        fact_2 = Verify(""Rob Tyner is not a keyboardist."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Gregg Rolie is not a renowned keyboardist."")
+        fact_2 = Verify(""Rob Tyner is not a renowned keyboardist."")
+        label = Predict(fact_1 and fact_2)",0.9714285714285714,Humans,Humans,ChatGPT,Humans.
+"""Clydebuilt"" is on the south bank of the River Clyde.","""Clydebuilt"" is on the north bank of the River Clyde.","program: 
+    def program():
+        fact_1 = Verify(""'Clydebuilt' is on the south bank of the River Clyde."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""Clydebuilt is on the north bank of the River Clyde."")
+        label = Predict(fact_1)",0.9722222222222222,Humans,Humans,Humans.,ChatGPT
+Jack McFarland is the best known role of the host of the 64th Annual Tony Awards .,Jane Smith is the best known role of the host of the 78th Annual Tony Awards.,"program: 
+    def program():
+        answer_1 = Question(""Who is the host of the 64th Annual Tony Awards?"")
+        fact_1 = Verify(f""Jack McFarland is the best known role of [answer_1]."")
+        label = Predict(fact_1)","program: 
+    def program():
+        answer_1 = Question(""Who is the host of the 78th Annual Tony Awards?"")
+        fact_1 = Verify(f""Jane Smith is the best known role of [answer_1]."")
+        label = Predict(fact_1)",0.8541666666666666,Humans,Humans,ChatGPT,Humans
+Martin O'Neill replaced the manager of the Aston Villa that began at Aston Villa Football Club.,J.K. Rowling replaced the manager of the Hogwarts School of Witchcraft and Wizardry that began at Hogwarts School of Witchcraft and Wizardry.,"program: 
+    def program():
+        answer_1 = Question(""Who replaced the manager of Aston Villa?"")
+        fact_1 = Verify(f""Martin O'Neill replaced the manager of Aston Villa."")
+        fact_2 = Verify(f""Martin O'Neill began at Aston Villa Football Club."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        answer_1 = Question(""Who replaced the manager of the Hogwarts School of Witchcraft and Wizardry?"")
+        answer_2 = Question(""Where did the manager begin their tenure?"")
+        fact_1 = Verify(f""J.K. Rowling replaced the manager that began at {answer_2}."")
+        label = Predict(fact_1)",0.7058823529411765,Humans,Humans,Humans.,ChatGPT
+"The 2014 All-Pac-12 Conference football team featured players from the team led by second-year head coach Mark Helfrich, who led his team to the conference title.","The 2022 All-Pac-12 Conference football team featured players from the team led by eighth-year head coach John Smith, who led his team to the conference title.","program: 
+    def program():
+        fact_1 = Verify(""The 2014 All-Pac-12 Conference football team featured players from the team led by second-year head coach Mark Helfrich."")
+        fact_2 = Verify(""Mark Helfrich led his team to the conference title."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""The 2022 All-Pac-12 Conference football team featured players from the team led by eighth-year head coach John Smith."")
+        fact_2 = Verify(""John Smith led his team to the conference title."")
+        label = Predict(fact_1 and fact_2)",0.8604651162790697,Humans,Humans,Humans.,Humans.
+"The historical Nimavar school in the Nimavar Bazaar, or bazar, is located in Iran.",在伊朗的尼玛瓦尔集市，或巴扎，有一个虚构的尼玛瓦尔学校。,"program: 
+    def program():
+        fact_1 = Verify(""The historical Nimavar school in the Nimavar Bazaar, or bazar, is located in Iran."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""在伊朗的尼玛瓦尔集市有一个虚构的尼玛瓦尔学校。"")
+        label = Predict(fact_1)",0.4727272727272727,Humans,Humans,Humans.,Humans.
+Elzie Crisler Segar created the character of whom Captain Strong is a parody.,Elzie Crisler Segar created the character of whom Popeye the Sailor is a parody.,"program: 
+    def program():
+        fact_1 = Verify(""Elzie Crisler Segar created a character."")
+        fact_2 = Verify(""Captain Strong is a parody of that character."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Elzie Crisler Segar created the character of whom Popeye the Sailor is a parody."")
+        label = Predict(fact_1)",0.9166666666666666,Humans,Humans,Humans.,Humans.
+The prison holding one of the two arrestees in the 18 September 2014 counter-terrorism raid opened in the year 2001.,The prison holding both of the two arrestees in the 18 September 2014 counter-terrorism raid closed in the year 2020.,"program: 
+    def program():
+        fact_1 = Verify(""The prison holding one of the two arrestees in the 18 September 2014 counter-terrorism raid opened in the year 2001."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""The prison holding the two arrestees in the 18 September 2014 counter-terrorism raid closed in the year 2020."")
+        label = Predict(fact_1)",1.0,Humans,Humans,Humans.,ChatGPT
+The Kentucky Department of Corrections is headquarted along the Kentucky River.,The Kentucky Department of Corrections is headquartered along the Mississippi River.,"program: 
+    def program():
+        fact_1 = Verify(""The Kentucky Department of Corrections is headquartered along the Kentucky River."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""The Kentucky Department of Corrections is headquartered along the Mississippi River."")
+        label = Predict(fact_1)",0.975,Humans,Humans,Humans.,Humans.
+"Stephanie Caroline March is the American actress that stars in the movie ""Innocesnce"" and is best known for her role as Alexandra Cabot in a long-running NBC series.","Stephanie Caroline March is the American actress that stars in the movie ""Innocence"" and is best known for her role as Alexandra Cabot in a long-running NBC series.
+
+改写后的虚假信息：Stephanie Caroline March is the American actress that stars in the movie ""Deception"" and is best known for her role as Olivia Benson in a long-running NBC series.","program: 
+    def program():
+        fact_1 = Verify(""Stephanie Caroline March is an American actress."")
+        fact_2 = Verify(""Stephanie Caroline March stars in the movie 'Innocence'."")
+        fact_3 = Verify(""Stephanie Caroline March is best known for her role as Alexandra Cabot in a long-running NBC series."")
+        label = Predict(fact_1 and fact_2 and fact_3)","program: 
+    def program():
+        fact_1 = Verify(""Stephanie Caroline March is an American actress."")
+        fact_2 = Verify(""Stephanie Caroline March stars in the movie 'Innocence'."")
+        fact_3 = Verify(""Stephanie Caroline March is best known for her role as Alexandra Cabot in a long-running NBC series."")
+        label = Predict(fact_1 and fact_2 and fact_3)",1.0,Humans,Humans,Humans.,Humans.
+The person who has a wider scope of profession between José Echegaray and Graham Swift is José Echegaray.,José Echegaray is the person who has a narrower scope of profession compared to Graham Swift.,"program: 
+    def program():
+        fact_1 = Verify(""José Echegaray has a wider scope of profession."")
+        fact_2 = Verify(""Graham Swift does not have a wider scope of profession."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""José Echegaray has a narrower scope of profession compared to Graham Swift."")
+        label = Predict(fact_1)",0.9473684210526315,Humans,Humans,Humans.,ChatGPT
+"Sian Gibson co-wrote the British sitcom Peter Kay's Car Share, set around a supermarket and car share scheme.","Sian Gibson co-wrote the British sitcom Jodie Foster's Car Share, set around a shopping mall and bike-sharing scheme.","program: 
+    def program():
+        fact_1 = Verify(""Sian Gibson co-wrote the British sitcom Peter Kay's Car Share."")
+        fact_2 = Verify(""Peter Kay's Car Share is set around a supermarket and car share scheme."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Sian Gibson co-wrote the British sitcom Jodie Foster's Car Share."")
+        fact_2 = Verify(""Jodie Foster's Car Share is set around a shopping mall and bike-sharing scheme."")
+        label = Predict(fact_1 and fact_2)",0.9302325581395349,Humans,Humans,ChatGPT,Humans.
+Smith worked on the series The Handmaid's Tale that is based on a novel by Margaret Atwood.,Smith worked on the series The Handmaid's Tale that is based on a novel by J.K. Rowling.,"program: 
+    def program():
+        fact_1 = Verify(""The Handmaid's Tale is based on a novel by Margaret Atwood."")
+        fact_2 = Verify(""Smith worked on the series The Handmaid's Tale."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Smith worked on the series The Handmaid's Tale."")
+        fact_2 = Verify(""The Handmaid's Tale is based on a novel by J.K. Rowling."")
+        label = Predict(fact_1 and fact_2)",0.8837209302325582,Humans,Humans,Humans.,Humans.
+The Potomac River runs along the neighborhood where Ashley Estates Kavanaugh's wedding was held.,The Mississippi River runs along the neighborhood where Ashley Estates Kavanaugh's wedding was held.,"program: 
+    def program():
+        answer_1 = Question(""Where was Ashley Estates Kavanaugh's wedding held?"")
+        fact_1 = Verify(f""The Potomac River runs along the neighborhood where [answer_1]'s wedding was held."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""The Mississippi River runs along the neighborhood where Ashley Estates Kavanaugh's wedding was held."")
+        label = Predict(fact_1)",0.8666666666666667,Humans,Humans,Humans.,Humans.
+The Swan of Catania was taught by the Italian composer Giovanni Furno.,The Swan of Catania was taught by the Italian composer Luigi Verdi.,"program: 
+    def program():
+        fact_1 = Verify(""The Swan of Catania was taught by Giovanni Furno."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""The Swan of Catania was taught by Luigi Verdi."")
+        label = Predict(fact_1)",0.8974358974358975,Humans,Humans,Humans.,Humans.
+Jimmy Garcia lost by unanimous decision to a professional boxer that challenged for the WBO lightweight title in 1995.,Jimmy Garcia won by unanimous decision against a professional boxer that challenged for the WBO lightweight title in 1995.,"program: 
+    def program():
+        answer_1 = Question(""Who did Jimmy Garcia lose to by unanimous decision?"")
+        fact_1 = Verify(f""[answer_1] challenged for the WBO lightweight title in 1995."")
+        label = Predict(fact_1)","program: 
+    def program():
+        answer_1 = Question(""Who did Jimmy Garcia win against by unanimous decision?"")
+        fact_1 = Verify(f""The professional boxer [answer_1] challenged for the WBO lightweight title in 1995."")
+        label = Predict(fact_1)",0.9555555555555556,Humans,Humans,ChatGPT,Humans.
+"The French singer-songwriter, musician, actress and model, who's live album is Divinidylle Tour, was born on 22 December 1972.","The German singer-songwriter, musician, actress and model, who's live album is Divinidylle Tour, was born on 22 December 1985.","program: 
+    def program():
+        fact_1 = Verify(""The French singer-songwriter, musician, actress and model was born on 22 December 1972."")
+        fact_2 = Verify(""Her live album is Divinidylle Tour."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""The German singer-songwriter, musician, actress and model was born on 22 December 1985."")
+        fact_2 = Verify(""Her live album is Divinidylle Tour."")
+        label = Predict(fact_1 and fact_2)",0.8888888888888888,Humans,Humans,Humans.,Humans.
+Superdrag and Collective Soul are both rock bands.,The Beatles and Led Zeppelin are both rock bands.,"program: 
+    def program():
+        fact_1 = Verify(""Superdrag is a rock band."")
+        fact_2 = Verify(""Collective Soul is a rock band."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""The Beatles is a rock band."")
+        fact_2 = Verify(""Led Zeppelin is a rock band."")
+        label = Predict(fact_1 and fact_2)",0.775,Humans,Humans,Humans.,Humans.
+"The Burlington Mall is a large, two-story, indoor shopping mall complex located off Route 3 and Route 128 in Burlington, Massachusetts, the mall is one of many shopping venues in the Middlesex County area, including Square One Mall, a 115 store shopping mall located along US Route 1 (Broadway) between Main Street and Essex Street in Saugus, Massachusetts.","The Burlington Mall is a small, one-story, outdoor shopping mall complex located off Route 3 and Route 128 in Burlington, Massachusetts, the mall is one of few shopping venues in the Middlesex County area, including Square One Mall, a 50 store shopping mall located along US Route 1 (Broadway) between Main Street and Essex Street in Saugus, Massachusetts.","program: 
+    def program():
+        fact_1 = Verify(""The Burlington Mall is a large, two-story, indoor shopping mall complex located off Route 3 and Route 128 in Burlington, Massachusetts."")
+        fact_2 = Verify(""The mall is one of many shopping venues in the Middlesex County area."")
+        fact_3 = Verify(""Square One Mall is a 115 store shopping mall located along US Route 1 (Broadway) between Main Street and Essex Street in Saugus, Massachusetts."")
+        label = Predict(fact_1 and fact_2 and fact_3)","program: 
+    def program():
+        fact_1 = Verify(""The Burlington Mall is a small, one-story, outdoor shopping mall complex located off Route 3 and Route 128 in Burlington, Massachusetts."")
+        fact_2 = Verify(""The Burlington Mall is one of few shopping venues in the Middlesex County area."")
+        fact_3 = Verify(""Square One Mall is a 50 store shopping mall located along US Route 1 (Broadway) between Main Street and Essex Street in Saugus, Massachusetts."")
+        label = Predict(fact_1 and fact_2 and fact_3)",0.9803921568627451,Humans,Humans,Humans.,Humans.
+Pablo Jose Ozuna is the cousin of a Dominican professional baseball left fielder who made his MLB debut in 2013.,Pablo Jose Ozuna is the cousin of a fictional Dominican professional soccer midfielder who made his MLS debut in 2013.,"program: 
+    def program():
+        answer_1 = Question(""Who is the cousin of Pablo Jose Ozuna?"")
+        answer_2 = Question(""Which Dominican professional baseball left fielder made his MLB debut in 2013?"")
+        fact_1 = Verify(f""[answer_1] is the cousin of [answer_2]."")
+        label = Predict(fact_1)","program: 
+    def program():
+        answer_1 = Question(""Who is the cousin of a fictional Dominican professional soccer midfielder who made his MLS debut in 2013?"")
+        fact_1 = Verify(f""Pablo Jose Ozuna is the cousin of [answer_1]."")
+        label = Predict(fact_1)",0.9583333333333334,Humans,Humans,ChatGPT,ChatGPT
+Judge Aaron Persky rendered the verdict in People v. Turner case  filed in Santa Clara County Superior Court.,"Judge Aaron Persky rendered the verdict in People v. Turner case filed in Santa Clara County Superior Court.
+
+改写后的句子可以是：Judge John Smith rendered the verdict in People v. Thompson case filed in Santa Clara County Superior Court.","program: 
+    def program():
+        fact_1 = Verify(""Judge Aaron Persky rendered the verdict in People v. Turner case."")
+        fact_2 = Verify(""People v. Turner case was filed in Santa Clara County Superior Court."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Judge Aaron Persky rendered the verdict in People v. Turner case filed in Santa Clara County Superior Court."")
+        label = Predict(fact_1)",0.95,Humans,Humans,Humans.,ChatGPT
+Both the Battle of Saipan and the Battle of Manila were fought by American forces.,Both the Battle of Saipan and the Battle of Manila were fought by Martian forces.,"program: 
+    def program():
+        fact_1 = Verify(""The Battle of Saipan was fought by American forces."")
+        fact_2 = Verify(""The Battle of Manila was fought by American forces."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""The Battle of Saipan was fought by Martian forces."")
+        fact_2 = Verify(""The Battle of Manila was fought by Martian forces."")
+        label = Predict(fact_1 and fact_2)",0.9736842105263158,Humans,Humans,ChatGPT,Humans.
+There is fruit juice in both a Fizz and a Painkiller cocktail.,There is coffee in both a Fizz and a Painkiller cocktail.,"program: 
+    def program():
+        fact_1 = Verify(""There is fruit juice in a Fizz cocktail."")
+        fact_2 = Verify(""There is fruit juice in a Painkiller cocktail."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""There is coffee in a Fizz cocktail."")
+        fact_2 = Verify(""There is coffee in a Painkiller cocktail."")
+        label = Predict(fact_1 and fact_2)",0.9459459459459459,Humans,Humans,Humans.,Humans.
+Arthur Noss was a gunner for the commader during the two European theatre battles Battle of Britain and the Battle of Malta in WWII.,Arthur Noss was a chef for the commander during the two European theatre battles Battle of Britain and the Battle of Malta in WWII.,"program: 
+    def program():
+        fact_1 = Verify(""Arthur Noss was a gunner for the commander during the Battle of Britain in WWII."")
+        fact_2 = Verify(""Arthur Noss was a gunner for the commander during the Battle of Malta in WWII."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Arthur Noss was a chef for the commander during the Battle of Britain in WWII."")
+        fact_2 = Verify(""Arthur Noss was a chef for the commander during the Battle of Malta in WWII."")
+        label = Predict(fact_1 and fact_2)",1.0,Humans,Humans,Humans.,ChatGPT
+"Poor old Lu, and not Shudder to Think, is a band that is  considered ""one of the most accomplished and creative American bands of the '90s"".",富有的老Lu，而不是Shudder to Think，是一支被誉为“90年代最杰出和富有创造力的美国乐队之一”的乐队。,"program: 
+    def program():
+        fact_1 = Verify(""Poor old Lu is a band that is considered 'one of the most accomplished and creative American bands of the '90s'."")
+        fact_2 = Verify(""Shudder to Think is not a band that is considered 'one of the most accomplished and creative American bands of the '90s'."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""富有的老Lu是一支被誉为“90年代最杰出和富有创造力的美国乐队之一”。"")
+        fact_2 = Verify(""Shudder to Think不是一支被誉为“90年代最杰出和富有创造力的美国乐队之一”。"")
+        label = Predict(fact_1 and fact_2)",0.5217391304347826,Humans,Humans,ChatGPT,Humans.
+Vladimir Igorevich Arnold died after Georg Cantor.,Vladimir Igorevich Arnold died before Georg Cantor.,"program: 
+    def program():
+        answer_1 = Question(""When did Vladimir Igorevich Arnold die?"")
+        answer_2 = Question(""When did Georg Cantor die?"")
+        fact_1 = Verify(f""[answer_1] is after [answer_2]."")
+        label = Predict(fact_1)","program: 
+    def program():
+        answer_1 = Question(""When did Vladimir Igorevich Arnold die?"")
+        answer_2 = Question(""When did Georg Cantor die?"")
+        fact_1 = Verify(f""[answer_1] is before [answer_2]."")
+        label = Predict(fact_1)",1.0,Humans,Humans,ChatGPT,Humans.
+"The South African record producer DJ Maphorisa collaborated with a contemporary Canadian Rapper on the song ""One Dance"".","The North Korean record producer DJ Maphorisa collaborated with a legendary Mexican Rapper on the song ""Gangnam Style"".","program: 
+    def program():
+        fact_1 = Verify(""DJ Maphorisa collaborated with a contemporary Canadian Rapper on the song 'One Dance'."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""DJ Maphorisa is a North Korean record producer."")
+        fact_2 = Verify(""The song 'Gangnam Style' was collaborated on by DJ Maphorisa."")
+        fact_3 = Verify(""The song 'Gangnam Style' was collaborated on by a legendary Mexican Rapper."")
+        label = Predict(fact_1 and fact_2 and fact_3)",0.7659574468085106,Humans,Humans,Humans.,Humans.
+British band The Wanted's third album includes a song with a title about Barbadian superstar Rihanna.,British band The Wanted's tenth album includes a song with a title about Italian superstar Andrea Bocelli.,"program: 
+    def program():
+        fact_1 = Verify(""The Wanted is a British band."")
+        fact_2 = Verify(""The Wanted's third album includes a song with a title about Barbadian superstar Rihanna."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        answer_1 = Question(""What is the title of British band The Wanted's tenth album?"")
+        fact_1 = Verify(f""The album [answer_1] includes a song with a title about Italian superstar Andrea Bocelli."")
+        label = Predict(fact_1)",0.8181818181818182,Humans,Humans,Humans.,Humans.
+Reimar Horten helped initially design the Gotha Go 229 and later died in Argentina in 1994.,Hermann Göring helped initially design the Horten Ho 229 and later died in Argentina in 1950.,"program: 
+    def program():
+        fact_1 = Verify(""Reimar Horten helped initially design the Gotha Go 229."")
+        fact_2 = Verify(""Reimar Horten died in Argentina in 1994."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Hermann Göring helped initially design the Horten Ho 229."")
+        fact_2 = Verify(""Hermann Göring died in Argentina in 1950."")
+        label = Predict(fact_1 and fact_2)",0.875,Humans,Humans,ChatGPT,ChatGPT
+The high security prison holding one of the two arrestees in the 18 September 2014 counter-terrorism raid opened in the year 2001.,The low security prison holding one of the two arrestees in the 18 September 2014 fashion show opened in the year 1999.,"program: 
+    def program():
+        fact_1 = Verify(""The high security prison holding one of the two arrestees in the 18 September 2014 counter-terrorism raid opened in the year 2001."")
+        label = Predict(fact_1)","program: 
+    def program():
+        answer_1 = Question(""When did the low security prison holding one of the two arrestees in the 18 September 2014 fashion show open?"")
+        fact_1 = Verify(f""The low security prison opened in the year {answer_1}."")
+        label = Predict(fact_1)",0.8636363636363636,Humans,Humans,Humans.,ChatGPT
+Qutebrowser uses DuckDuckGo to emphasize returning the best results.,Qutebrowser uses Baidu to emphasize returning the best results.,"program: 
+    def program():
+        fact_1 = Verify(""Qutebrowser uses DuckDuckGo."")
+        fact_2 = Verify(""DuckDuckGo emphasizes returning the best results."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Qutebrowser uses Baidu."")
+        fact_2 = Verify(""Baidu is used to emphasize returning the best results."")
+        label = Predict(fact_1 and fact_2)",0.8974358974358975,Humans,Humans,Humans.,ChatGPT
+Carrie Coon plays Margo Dunne in a 2014 film set in Missouri.,Carrie Coon plays Amy Dunne in a 2016 film set in Tennessee.,"program: 
+    def program():
+        fact_1 = Verify(""Carrie Coon plays Margo Dunne."")
+        fact_2 = Verify(""The film is set in Missouri."")
+        fact_3 = Verify(""The film was released in 2014."")
+        label = Predict(fact_1 and fact_2 and fact_3)","program: 
+    def program():
+        fact_1 = Verify(""Carrie Coon plays Amy Dunne."")
+        fact_2 = Verify(""The 2016 film is set in Tennessee."")
+        label = Predict(fact_1 and fact_2)",0.8571428571428571,Humans,Humans,Humans.,Humans.
+"Jacob ""Jack"" Kevorkian is best known for publicly championing a terminal patient's right to die via physician-assisted suicide, not Christy Canyon.","Christy Canyon is best known for publicly championing a terminal patient's right to die via physician-assisted suicide, not Jacob ""Jack"" Kevorkian.","program: 
+    def program():
+        fact_1 = Verify(""Jacob 'Jack' Kevorkian is best known for publicly championing a terminal patient's right to die via physician-assisted suicide."")
+        fact_2 = Verify(""Christy Canyon is not best known for publicly championing a terminal patient's right to die via physician-assisted suicide."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Christy Canyon is best known for publicly championing a terminal patient's right to die via physician-assisted suicide."")
+        fact_2 = Verify(""Jacob 'Jack' Kevorkian is not best known for publicly championing a terminal patient's right to die via physician-assisted suicide."")
+        label = Predict(fact_1 and fact_2)",1.0,Humans,Humans,Humans.,Humans.
+"Underfist: Halloween Bash was going to be the setup for a new series spin-off but the contract expired with a cable and television station that was launched on October 1, 19962 by  Betty Cohen.","Underfist: Halloween Bash was going to be the setup for a new series spin-off but the contract expired with a cable and television station that was launched on October 1, 2022 by  John Smith.","program: 
+    def program():
+        fact_1 = Verify(""Underfist: Halloween Bash was going to be the setup for a new series spin-off."")
+        fact_2 = Verify(""The contract expired with a cable and television station that was launched on October 1, 1996 by Betty Cohen."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Underfist: Halloween Bash was going to be the setup for a new series spin-off."")
+        fact_2 = Verify(""The contract for the new series spin-off expired with a cable and television station launched on October 1, 2022 by John Smith."")
+        label = Predict(fact_1 and fact_2)",0.875,Humans,Humans,ChatGPT,Humans.
+"The song by English indie rock band Florence and the Machine written by Florence Welch and Francis ""Eg"" White and released in 2011 in named after the painting which was completed in 1938.",The song by French heavy metal band Metallica written by James Hetfield and Lars Ulrich and released in 1981 is named after the painting which was completed in 1875.,"program: 
+    def program():
+        fact_1 = Verify(""The song by Florence and the Machine was written by Florence Welch and Francis 'Eg' White."")
+        fact_2 = Verify(""The song was released in 2011."")
+        fact_3 = Verify(""The song is named after the painting which was completed in 1938."")
+        label = Predict(fact_1 and fact_2 and fact_3)","program: 
+    def program():
+        answer_1 = Question(""What is the name of the song by Metallica?"")
+        fact_1 = Verify(f""The song [answer_1] is written by James Hetfield and Lars Ulrich."")
+        fact_2 = Verify(""The song was released in 1981."")
+        fact_3 = Verify(""The song is named after a painting completed in 1875."")
+        label = Predict(fact_1 and fact_2 and fact_3)",0.7169811320754716,Humans,Humans,ChatGPT,Humans.
+Zamalek Sporting Club Centennial was a friendly match against professional football club that plays in La Liga.,Zamalek Sporting Club Centennial was a friendly match against a professional football club that plays in the Chinese Super League.,"program:
+    def program():
+        answer_1 = Question(""Which football club did Zamalek Sporting Club Centennial have a friendly match against?"")
+        fact_1 = Verify(f""[answer_1] is a professional football club that plays in La Liga."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""Zamalek Sporting Club Centennial was a friendly match."")
+        fact_2 = Verify(""The professional football club that played in the match plays in the Chinese Super League."")
+        label = Predict(fact_1 and fact_2)",0.8222222222222222,Humans,Humans,Humans.,Humans.
+Carvedilol is a non-selective betablocker used to treat congestive heart failure.,Carvedilol is a selective betablocker used to treat congestive heart failure.,"program: 
+    def program():
+        fact_1 = Verify(""Carvedilol is a non-selective betablocker."")
+        fact_2 = Verify(""Carvedilol is used to treat congestive heart failure."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Carvedilol is a selective betablocker."")
+        fact_2 = Verify(""Carvedilol is used to treat congestive heart failure."")
+        label = Predict(fact_1 and fact_2)",0.9722222222222222,Humans,Humans,Humans,ChatGPT
+The first Russian composer to make a lasting impression internationally was Pyotr Ilyich Tchaikovsky not Alessandro Scarlatti.,The first Russian composer to make a lasting impression internationally was Alessandro Scarlatti not Pyotr Ilyich Tchaikovsky.,"program: 
+    def program():
+        fact_1 = Verify(""Pyotr Ilyich Tchaikovsky was the first Russian composer to make a lasting impression internationally."")
+        fact_2 = Verify(""Alessandro Scarlatti was not the first Russian composer to make a lasting impression internationally."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Alessandro Scarlatti was the first Russian composer to make a lasting impression internationally."")
+        fact_2 = Verify(""Pyotr Ilyich Tchaikovsky was not the first Russian composer to make a lasting impression internationally."")
+        label = Predict(fact_1 and fact_2)",1.0,Humans,Humans,Humans.,Humans.
+"Robert A. Iger, the former president of ABC television is a high ranking officer in the same company as Christine Mccarthy.","Robert A. Iger, the former president of ABC television, is a low-ranking intern in the same company as Christine McCarthy.","program: 
+    def program():
+        fact_1 = Verify(""Robert A. Iger is a former president of ABC television."")
+        fact_2 = Verify(""Christine McCarthy is a high ranking officer in the same company as Robert A. Iger."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Robert A. Iger is the former president of ABC television."")
+        fact_2 = Verify(""Christine McCarthy is a low-ranking intern in the same company."")
+        label = Predict(fact_1 and fact_2)",0.9512195121951219,Humans,Humans,Humans.,Humans.
+"The international arms smuggler who was the subject of the 2014 documentary film ""The Notorious Mr. Bout"" was born in the year 1967.",在2014年的纪录片《臭名昭著的邦特先生》中，1967年出生的国际毒品走私犯成为了主角。,"program: 
+    def program():
+        answer_1 = Question(""What year was the international arms smuggler born?"")
+        fact_1 = Verify(f""The international arms smuggler was born in the year {answer_1}."")
+        label = Predict(fact_1)","program: 
+    def program():
+        fact_1 = Verify(""在2014年的纪录片《臭名昭著的邦特先生》中，1967年出生的国际毒品走私犯成为了主角。"")
+        label = Predict(fact_1)",0.34210526315789475,Humans,Humans,ChatGPT,Humans
+"Nell Gwyn, the long-time mistress of King Charles II of England occupied a townhouse in Pall Mall, London.","Nell Gwyn, the long-time mistress of King Charles II of England occupied a castle in Pall Mall, London.","program: 
+    def program():
+        fact_1 = Verify(""Nell Gwyn was the long-time mistress of King Charles II of England."")
+        fact_2 = Verify(""Nell Gwyn occupied a townhouse in Pall Mall, London."")
+        label = Predict(fact_1 and fact_2)","program: 
+    def program():
+        fact_1 = Verify(""Nell Gwyn was the long-time mistress of King Charles II of England."")
+        fact_2 = Verify(""Nell Gwyn occupied a castle in Pall Mall, London."")
+        label = Predict(fact_1 and fact_2)",1.0,Humans,Humans,Humans.,Humans.
