@@ -1,0 +1,150 @@
+"""对PROGRAMFC输出的example在ChatGPT进行结果对比，temperature=0.7，prompt=HOVER template，K=20"""
+"""对PROGRAMFC输出的example在ChatGPT进行结果对比，temperature=0.7，prompt=HOVER template，K=12"""
+
+[
+	{
+	"mark": "Both"
+	"claim":"""Tritonia and Phyteuma are both names for a plant genus."""
+	"Paper": """
+		fact_1 = Verify("Tritonia is a name for a plant genus.")
+		fact_2 = Verify("Phyteuma is a name for a plant genus.")
+		label = Predict(fact_1 and fact_2)
+	""",
+	"HOVER":"""
+	def program():
+		fact_1 = Verify("Tritonia is a name for a plant genus.")
+		fact_2 = Verify("Phyteuma is a name for a plant genus.")
+		label = Predict(fact_1 and fact_2)
+	"""
+	"FS":"""
+	def program():
+		fact_1 = Verify("Tritonia is a name for a plant genus.")
+		fact_2 = Verify("Phyteuma is a name for a plant genus.")
+		label = Predict(fact_1 and fact_2)
+	"""
+	},
+
+	{
+		"claim":"""The country that Fujairah College is located in had a 2013 population of 9.2 million until it was 
+		hit by the plague in 1483 when the population was halved."""
+		"Paper": """
+			answer_1 = Question("Which country is Fujairah College located in?")
+			fact_1 = Verify("{answer_1} had a 2013 population of 9.2 million.")
+			fact_2 = Verify("{answer_1} was hit by the plague in 1483.")
+			fact_3 = Verify("The population of {answer_1} was halved in 1483.")
+			label = Predict(fact_1 and fact_2 and fact_3)
+		""",
+		"HOVER":"""
+		def program():
+			answer_1 = Question("Which country is Fujairah College located in?")
+			fact_1 = Verify(f"The country [answer_1] had a 2013 population of 9.2 million.")
+			fact_2 = Verify(f"The country [answer_1] was hit by the plague in 1483 and the population was halved.")
+			label = Predict(fact_1 and fact_2)
+		"""
+		"FS":"""
+		def program():
+			fact_1 = Verify("Fujairah College is located in a country.")
+			fact_2 = Verify("The country had a population of 9.2 million in 2013.")
+			fact_3 = Verify("The country was hit by the plague in 1483 and the population was halved.")
+			label = Predict(fact_1 and fact_2 and fact_3)
+		"""
+		},
+
+		{
+			"claim":"""The first female board member for the Liberal Party, she was born in Vestfold county in Norway."""
+			"Paper": """
+				answer_1 = Question("Who was the first female board member for the Liberal Party?")
+				fact_1 = Verify("{answer_1} was born in Vestfold county in Norway.")
+				label = Predict(fact_1)
+			""",
+			"HOVER":"""
+			def program():
+				fact_1 = Verify("She is the first female board member for the Liberal Party.")
+				fact_2 = Verify("She was born in Vestfold county in Norway.")
+				label = Predict(fact_1 and fact_2)
+			"""
+			"FS":"""
+			def program():
+				fact_1 = Verify("She was the first female board member for the Liberal Party.")
+				fact_2 = Verify("She was born in Vestfold county in Norway.")
+				label = Predict(fact_1 and fact_2)
+			"""
+		},
+
+		{
+			"claim":"""The solicitor who won the show Back to Reality ahead of Maureen Rees and Craig Phillips is English. The solicitor that was a chair of Global Witness is also English."""
+			"Paper": """
+				answer_1 = Question("Which solicitor won the show Back to Reality ahead of Maureen Rees and Craig Phillips?")
+				answer_2 = Question("Which solicitor was a chair of Global Witness?")
+				fact_1 = Verify("{answer_1} is English.")
+				fact_2 = Verify("{answer_2} is English.")
+				label = Predict(fact_1 and fact_2)
+			""",
+			"HOVER":"""
+			def program():
+				answer_1 = Question("Who won the show Back to Reality?")
+				fact_1 = Verify(f"The solicitor [answer_1] is English.")
+				answer_2 = Question("Who was the chair of Global Witness?")
+				fact_2 = Verify(f"The solicitor [answer_2] is also English.")
+				label = Predict(fact_1 and fact_2)
+			"""
+			"FS":"""
+			def program():
+				fact_1 = Verify("The solicitor who won the show Back to Reality ahead of Maureen Rees and Craig Phillips is English.")
+				fact_2 = Verify("The solicitor that was a chair of Global Witness is English.")
+				label = Predict(fact_1 and fact_2)
+			"""
+		},
+
+		{
+			"claim":"""Anthony Burgess addressed the novelist and essayist, the author of Grimus, in a lengthy love letter. The author is of the same nationality as Raj Koothrappali."""
+			"Paper": """
+				answer_1 = Question("Which novelist and essayist did Anthony Burgess address in a lengthy love letter?")
+				fact_1 = Verify("{answer_1} is the author of Grimus.")
+				answer_2 = Question("What is the nationality of Raj Koothrappali?")
+				fact_2 = Verify("{answer_1} is of the same nationality as {answer_2}.")
+				label = Predict(fact_1 and fact_2)
+			""",
+			"HOVER":"""
+			def program():
+				answer_1 = Question("Who is the author of Grimus?")
+				fact_1 = Verify(f"Anthony Burgess addressed the novelist and essayist, [answer_1], in a lengthy love letter.")
+				answer_2 = Question("What is the nationality of Raj Koothrappali?")
+				fact_2 = Verify(f"The author of Grimus is of the same nationality as [answer_2].")
+				label = Predict(fact_1 and fact_2)
+			"""
+			"FS":"""
+			def program():
+				fact_1 = Verify("Anthony Burgess addressed the novelist and essayist.")
+				fact_2 = Verify("The author of Grimus is of the same nationality as Raj Koothrappali.")
+				label = Predict(fact_1 and fact_2)
+			"""
+		},
+
+		{
+			"claim":"""The critically acclaimed film, that Buddy Baker scored in 1975, is a Walt Disney film. It was produced first before the film that featured Bruce M. Fischer as Mr. Coogar."""
+			"Paper": """
+				answer_1 = Question("Which critically acclaimed film did Buddy Baker score in 1975?")
+				fact_1 = Verify("{answer_1} is a Walt Disney film.")
+				answer_2 = Question("Which film featured Bruce M. Fischer as Mr. Coogar?")
+				fact_2 = Verify("{answer_1} was produced first before {answer_2}.")
+				label = Predict(fact_1 and fact_2)
+			""",
+			"HOVER":"""
+			def program():
+				answer_1 = Question("Which critically acclaimed film did Buddy Baker score in 1975?")
+				fact_1 = Verify(f"The film [answer_1] is a Walt Disney film.")
+				answer_2 = Question("Which film featured Bruce M. Fischer as Mr. Coogar?")
+				fact_2 = Verify(f"The film produced first before [answer_2] is the film Buddy Baker scored in 1975.")
+				label = Predict(fact_1 and fact_2)
+			"""
+			"FS":"""
+			def program():
+				fact_1 = Verify("The critically acclaimed film was scored by Buddy Baker in 1975.")
+				fact_2 = Verify("The critically acclaimed film is a Walt Disney film.")
+				fact_3 = Verify("The film featuring Bruce M. Fischer as Mr. Coogar was produced after the critically acclaimed film.")
+				label = Predict(fact_1 and fact_2 and fact_3)
+			"""
+		},
+]
+
